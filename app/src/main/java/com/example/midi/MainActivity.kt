@@ -6,20 +6,24 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import com.example.midi.ui.theme.MidiTheme
-import com.example.midi.ui.theme.StrockColor
-import com.example.midi.ui.theme.YellowBackColor
+import com.example.midi.ui.components.MainNotes
+import com.example.midi.ui.components.SharpNotes
+import com.example.midi.ui.theme.*
 import com.example.midi.ui.viewModel.MainViewModel
 
 class MainActivity : ComponentActivity() {
@@ -28,6 +32,7 @@ class MainActivity : ComponentActivity() {
     private val mainViewModel: MainViewModel by viewModels()
 
 
+    @ExperimentalComposeUiApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -35,10 +40,33 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             MidiTheme {
-                Surface(
-                    color = YellowBackColor,
-                    modifier = Modifier.fillMaxSize()
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(YellowBackColor)
                 ){
+                    Row(modifier = Modifier
+                        .background(Color.Transparent)
+                        .weight(4f)
+                        .fillMaxSize()
+                    ){
+                        Box(modifier = Modifier
+                            .weight(6f).background(LightPinkColor)
+                            .fillMaxSize()
+                        )
+                        Box(modifier = Modifier
+                            .weight(4f).background(LightBlueColor)
+                            .fillMaxSize()
+                        )
+                    }
+
+                    Box(modifier = Modifier
+                        .weight(6f)
+                        .fillMaxSize()
+                    ){
+                        MainNotes(mainViewModel)
+                        SharpNotes(mainViewModel)
+                    }
 
                 }
             }
