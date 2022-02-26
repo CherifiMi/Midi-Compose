@@ -95,11 +95,13 @@ fun RowScope.Note(pitch: Int, viewModel: MainViewModel) {
                     when (it.action) {
                         MotionEvent.ACTION_DOWN -> {
                             viewModel.startNote(pitch)
+                            viewModel.setNum(pitch.toFloat())
                             x.value = 4.dp
                             back.value = DarkPinkColor
                         }
                         MotionEvent.ACTION_UP -> {
                             viewModel.stopNote()
+                            viewModel.setNum(1f)
                             x.value = 0.dp
                             back.value = Color.White
                         }

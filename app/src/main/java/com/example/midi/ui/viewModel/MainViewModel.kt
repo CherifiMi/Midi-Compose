@@ -3,17 +3,19 @@ package com.example.midi.ui.viewModel
 import android.media.AudioFormat
 import android.media.AudioManager
 import android.media.AudioTrack
+import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel(){
 
-    /*
-    val taskprio = mutableStateOf(0)
 
-    fun updateIdValue(b:Int){
-        this.updatetaskid.value = b
+    val num = mutableStateOf(1f)
+
+    fun setNum(num: Float){
+        this.num.value = num
     }
-    */
 
     //--------------------values
     var isPlaying: Boolean = false

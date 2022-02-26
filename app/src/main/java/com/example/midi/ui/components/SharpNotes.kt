@@ -90,10 +90,12 @@ fun RowScope.SharpNote(pitch: Int ,viewModel: MainViewModel) {
                     when (it.action) {
                         MotionEvent.ACTION_DOWN -> {
                             viewModel.startNote(pitch)
+                            viewModel.setNum(pitch.toFloat())
                             x.value = 4
                         }
                         MotionEvent.ACTION_UP -> {
                             viewModel.stopNote()
+                            viewModel.setNum(1f)
                             x.value = 0
                         }
                         else -> false

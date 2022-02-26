@@ -1,5 +1,6 @@
 package com.example.midi
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.WindowInsetsController
 import androidx.activity.ComponentActivity
@@ -26,13 +27,13 @@ import com.example.midi.ui.components.SharpNotes
 import com.example.midi.ui.theme.*
 import com.example.midi.ui.viewModel.MainViewModel
 
+@ExperimentalComposeUiApi
 class MainActivity : ComponentActivity() {
 
     //------------values
     private val mainViewModel: MainViewModel by viewModels()
 
 
-    @ExperimentalComposeUiApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -81,6 +82,11 @@ class MainActivity : ComponentActivity() {
             WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
 
         windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        setIntent(intent)
     }
 
 }
