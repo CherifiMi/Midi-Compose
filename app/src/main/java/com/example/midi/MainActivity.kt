@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.WindowInsetsController
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
@@ -19,11 +20,12 @@ import androidx.core.view.WindowInsetsControllerCompat
 import com.example.midi.ui.theme.MidiTheme
 import com.example.midi.ui.theme.StrockColor
 import com.example.midi.ui.theme.YellowBackColor
+import com.example.midi.ui.viewModel.MainViewModel
 
 class MainActivity : ComponentActivity() {
 
     //------------values
-
+    private val mainViewModel: MainViewModel by viewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
