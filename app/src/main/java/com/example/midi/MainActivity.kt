@@ -8,10 +8,14 @@ import android.view.ViewGroup
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -53,10 +57,15 @@ class MainActivity : FragmentActivity() {
                         .fillMaxSize()
                     ){
 
-                        Box(modifier = Modifier
+                        Card(
+                            shape = RoundedCornerShape(32),
+                            modifier = Modifier
                             .weight(6f)
-                            .background(LightBlueColor)
+                            .background(Color.Transparent)
                             .fillMaxSize()
+                            .padding(32.dp)
+                            .border(6.dp, StrockColor, RoundedCornerShape(32))
+                            .background(LightPinkColor, RoundedCornerShape(32))
                         ){
                             AndroidView(
                                 factory = { context: Context ->

@@ -34,19 +34,6 @@ fun RowScope.Waves() {
         .background(LightPinkColor, RoundedCornerShape(32))
     ){
 
-        /*AndroidView(
-        factory = { context: Context ->
-            val view = LayoutInflater.from(context)
-                .inflate(R.layout.text_layout, null, false)
-
-            sketch = Oscilloscope(mainViewModel)
-            val fragment = PFragment(sketch)
-            fragment.setView(view, requireActivity())
-
-            view
-        }
-    )*/
-
     }
 }
 
