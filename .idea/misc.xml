@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/mito/Resources/android/Midi/app/src/main/res/layout/fragment_blank.xml" value="0.10733695652173914" />
         <entry key="..\:/mito/Resources/android/Midi/app/src/main/res/layout/fragment_canvas.xml" value="0.12092391304347826" />
+        <entry key="..\:/mito/Resources/android/Midi/app/src/main/res/layout/text_layout.xml" value="0.1" />
       </map>
     </option>
   </component>
