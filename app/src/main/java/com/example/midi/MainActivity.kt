@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.background
@@ -21,9 +20,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.FragmentActivity
-import com.example.midi.ui.components.MainNotes
-import com.example.midi.ui.components.SharpNotes
-import com.example.midi.ui.components.osilloscope.Oscilloscope
+import com.example.midi.ui.components.*
 import com.example.midi.ui.theme.*
 import com.example.midi.ui.viewModel.MainViewModel
 import processing.android.CompatUtils
@@ -34,9 +31,8 @@ import processing.core.PApplet
 class MainActivity : FragmentActivity() {
 
     //------------values
-    private var sketch: PApplet? = null
     private val mainViewModel: MainViewModel by viewModels()
-    var hi = this
+    var sketch: PApplet? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,17 +56,21 @@ class MainActivity : FragmentActivity() {
                         Card(
                             shape = RoundedCornerShape(32),
                             modifier = Modifier
-                            .weight(6f)
-                            .background(Color.Transparent)
-                            .fillMaxSize()
-                            .padding(32.dp)
-                            .border(6.dp, StrockColor, RoundedCornerShape(32))
-                            .background(LightPinkColor, RoundedCornerShape(32))
-                        ){
+                                .weight(6f)
+                                .background(Color.Transparent)
+                                .fillMaxSize()
+                                .padding(32.dp)
+                                .border(6.dp,
+                                    StrockColor,
+                                    RoundedCornerShape(32))
+                                .background(LightPinkColor,
+                                    RoundedCornerShape(32))
+                        )
+                        {
                             AndroidView(
                                 factory = { context: Context ->
                                     val view = LayoutInflater.from(context)
-                                        .inflate(R.layout.text_layout, null, false)
+                                        .inflate(R.layout.wave_layout, null, false)
 
                                     view.id = CompatUtils.getUniqueViewId()
                                     sketch = Oscilloscope(mainViewModel)
@@ -81,11 +81,7 @@ class MainActivity : FragmentActivity() {
                                 })
                         }
 
-                        Box(modifier = Modifier
-                            .weight(4f)
-                            .background(LightBlueColor)
-                            .fillMaxSize()
-                        )
+                        AmpPha(mainViewModel)
                     }
 
                     Box(modifier = Modifier

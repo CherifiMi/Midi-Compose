@@ -44,16 +44,6 @@ fun MainNotes(viewModel: MainViewModel) {
             .fillMaxSize(),
     )
     {
-        /*
-        note(Ac, 466)
-        note(Cc, 554)
-        note(Dc, 622)
-        note(Fc, 740)
-        note(Gc, 830)
-
-        note(ac, 932)
-        note(cc, 1108)
-        note(dc, 1244)*/
 
         Note(pitch = 440, viewModel)
         Note(pitch = 493, viewModel)

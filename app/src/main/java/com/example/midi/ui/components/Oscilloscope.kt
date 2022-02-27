@@ -1,4 +1,4 @@
-package com.example.midi.ui.components.osilloscope
+package com.example.midi.ui.components
 
 import com.example.midi.ui.viewModel.MainViewModel
 import processing.core.PApplet
@@ -17,13 +17,14 @@ class Oscilloscope(var mainViewModel: MainViewModel): PApplet() {
     lateinit var yvalues: FloatArray
 
 
+
     override fun setup() {
         w = width+16
     }
 
     override fun draw() {
         var period: Float = mainViewModel.num.value
-        dx = (TWO_PI / period) * xspacing
+        dx = (TWO_PI / period) * xspacing*2
         yvalues = FloatArray(w / xspacing)
         background(255f, 176f, 205f)
         calcWave()
@@ -44,7 +45,7 @@ class Oscilloscope(var mainViewModel: MainViewModel): PApplet() {
         noStroke()
         for (x in 0 until yvalues.size) {
             fill(2f, 116f, 189f)
-            ellipse((x * xspacing).toFloat(), height / 2 + yvalues[x], 16f, 16f)
+            ellipse((x * xspacing).toFloat(), height / 2 + yvalues[x], 18f, 18f)
         }
     }
 

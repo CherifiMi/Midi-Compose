@@ -70,8 +70,8 @@ fun RowScope.SharpNote(pitch: Int ,viewModel: MainViewModel) {
         Box(modifier = Modifier
             .height(148.dp)
             .width(44.dp)
-            .offset(26.dp, 0.dp)
-            .background(DarkBlueColor, RoundedCornerShape(15))
+            .offset(28.dp, 0.dp)
+            .background(Color(0xff2FCDC4), RoundedCornerShape(15))
         )
 
 
@@ -91,7 +91,7 @@ fun RowScope.SharpNote(pitch: Int ,viewModel: MainViewModel) {
                         MotionEvent.ACTION_DOWN -> {
                             viewModel.startNote(pitch)
                             viewModel.setNum(pitch.toFloat())
-                            x.value = 4
+                            x.value = 6
                         }
                         MotionEvent.ACTION_UP -> {
                             viewModel.stopNote()

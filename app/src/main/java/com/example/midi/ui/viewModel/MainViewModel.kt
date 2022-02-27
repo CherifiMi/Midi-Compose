@@ -12,9 +12,17 @@ class MainViewModel : ViewModel(){
 
 
     val num = mutableStateOf(1f)
+    val amp = mutableStateOf(42767)
+    val pha = mutableStateOf(100)
 
     fun setNum(num: Float){
         this.num.value = num
+    }
+    fun setAmp(i: Int){
+        this.amp.value += i
+    }
+    fun setPha(i: Int){
+        this.pha.value += i
     }
 
     //--------------------values
@@ -24,8 +32,8 @@ class MainViewModel : ViewModel(){
     val buffLength: Int = AudioTrack.getMinBufferSize(Fs, AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_16BIT)
 
     //----------------changes
-    var amplitude = 42767
-    var phase = 0
+    var amplitude = amp.value
+    var phase = pha.value
     var oum = 8
 
     fun startNote(i: Int){
