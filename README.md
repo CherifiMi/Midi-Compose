@@ -1,2 +1,2 @@
-# Midi-Compose
+# Piano App
 youuuuuu
