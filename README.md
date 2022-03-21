@@ -34,5 +34,4 @@
 
 
 ## Architecture
-Stylophone is based on the MVVM architecture and the Repository pattern
 ![image](https://user-images.githubusercontent.com/98290339/152096381-2a8898d3-c351-4032-979d-ebc836e46332.png)
