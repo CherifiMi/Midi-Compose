@@ -1,7 +1,7 @@
  <h1 align="center">MIDI APP</h1>
 
 <p align="center">  
-  this app is a musical instrument digital interface and an a musical notes Oscilloscope.
+  this app is a musical instrument digital interface and a musical notes Oscilloscope.
 </p>
 </br>
 
