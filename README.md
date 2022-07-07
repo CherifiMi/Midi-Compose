@@ -1,11 +1,11 @@
  <h1 align="center">MIDI APP</h1>
 
 <p align="center">  
-  this app is a musical instrument digital interface and a musical notes Oscilloscope.
+ 🎹 this app is a musical instrument digital interface and a musical notes Oscilloscope.
 </p>
 </br>
 
-<img width="1163" alt="Midi" src="https://user-images.githubusercontent.com/98290339/159191591-6a637c96-ba7d-4e0c-a8c7-bb25fb116c71.png">
+![Frame 4](https://user-images.githubusercontent.com/98290339/177842173-e72c2fce-4e51-4708-93f2-277c1e719a08.png)
 
 
 #### Ui Made in [Figma](https://www.figma.com/file/mtCF10n9wphsv1JdKG00uQ/Ux-and-shi?node-id=398%3A333)
